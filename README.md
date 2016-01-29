@@ -1,7 +1,7 @@
 ### Github-firststeps
 This is a tutorial for all github beginners/noobs.
-Here will be all important commands and a detailed description to much used steps like squashing or rebasing.
+Here we will provide all important commands with a detailed description for the most used steps needed to contribute to one of our projects.
 
 ## Features
-Github per Commandline (Linux):
+Github using Command-Line (Linux):
 - Clone a project
