@@ -4,6 +4,7 @@
 - To write on this file in vim just type `a`.
 - Now you add `squash = "!f(){ git reset --soft HEAD~${1} && git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\"; };f"`to the [alias] section.
 - To save this file in vim type `Esc:wq`.
+
 #### Use the squash alias
 - Go to your project location
 - Select the right branch using `git checkout [BRANCH]`
