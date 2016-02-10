@@ -1,12 +1,11 @@
-### How-to squash multiple commits in a single one
-#### Add squash alias to .gitconfig (should be only done once)
-- Type `git config --global -e` to edit the global .gitconfig file.
-- To write on this file in vim just type `a`.
-- Now you add `squash = "!f(){ git reset --soft HEAD~${1} && git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\"; };f"`to the [alias] section.
-- To save this file in vim type `Esc:wq`.
+## How-To: Squash your Commits
+1. Open your `.gitconfig` file, which is located in `~/.gitconfig` or simply open it in the CLI, typing `git config --global -e`
+2. Add a new section containing the following line:
+  
+```
+[alias]
+  squash = "!f(){ git reset --soft HEAD~${1} && git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\"; };f"
+```
 
-#### Use the squash alias
-- Go to your project location
-- Select the right branch using `git checkout [BRANCH]`
-- Type `git squash [amount of commits to be squashed]`. **It squashes the latest x commits of the current branch even if they aren't pushed to the remote yet!**
-- Last you have to upload your squash to the remote by typing `git push -f [REMOTE] [BRANCH]`.
+3. Save your file and enjoy using the CLI command `git squash [Amount of Commits]`
+4. To upload your squash to the remote you have to force push, using `git push --force [REMOTE] [BRANCH]`
